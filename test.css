@@ -1,0 +1,41 @@
+﻿
+@font-face {
+		font-family: 'Handon3gyeopsal300g';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal300g.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		}
+body { font-family:"Handon3gyeopsal300g"; background-color:#FFFFF8;}
+
+.headline {
+	height: 80px;
+	padding: 30px;
+	font-size: 50px;
+	font-weight: bold;
+	color:#4C4C4C;
+}
+
+.navbar {
+	width: 60%;
+	height: 50px;
+	border-top: solid #4C4C4C 3px;
+	border-bottom: solid #4C4C4C 3px;
+	padding-top: 20px;
+	}
+
+.navD {margin-right: 20px;}
+
+footer {
+	text-align: left;
+	width: 60%;
+}
+
+.write {
+	width:60px;
+	height:25px;
+	border: solid 1px gray;
+	border-radius:3px;
+	line-height:25px;
+	}
+	
+.write:hover { background-color: rgba(234,234,234,0.5);}

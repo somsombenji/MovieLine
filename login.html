@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="test.css"/>
+		<script src="member.js"></script>
+		<script>
+			function loginCheck() {
+				var id=logFORM.id.value;
+				var pw=logFORM.pw.value;
+				var flag=0;
+				
+				for(var i=0;i<member_id.length; i++)
+				{
+					if(id===member_id[i] && pw===member_pwd[i])
+					{
+						flag=1;
+						break;
+					}
+				}
+				
+				if(flag)
+				{
+					alert(member_name[i] + "님이 로그인 하셨습니다.");
+					return true;
+				}
+				else
+				{
+					alert("아이디나 비밀번호가 틀립니다.");
+					logFORM.id.value="";
+					logFORM.pw.value="";
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+		<div class="headline">MOVIE LINE</div>
+		<div>LOGIN</div>
+		<div class="login">
+			<form name="logFORM" action="identity.jsp" method="POST" target="mid">
+				<p>ID&nbsp;<input type="text" name="id" size="8" value="" required></p>
+				<p>PW&nbsp;<input type="passward" name="pw" size="8" value="" required></p>
+				
+				<p><input type="button" value="로그인" onclick="javascript:if(loginCheck()==true) {submit(); self.close();}"></p>
+				<input type="reset" value="재작성">
+			</form>
+			
+		</div>
+	</body>
+</html>

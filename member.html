@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>MOVIE LINE</title>
+		<link rel="stylesheet" type="text/css" href="test.css" />
+		<style>
+			hr {
+				width: 60%;
+				}
+		</style>
+	<script src="member.js"></script>
+	<script>
+		function idCheck() {
+			var idVar=member.id.value;
+			
+			var flag=1;
+			for(var i=0; i<member_id.length; i++)
+			{
+				if(idVar===member_id[i])
+				{
+					flag=0;
+					break;
+				}
+			}
+			
+			if(flag)
+				alert("이 아이디는 사용 가능합니다.");
+			else
+			{
+				alert("이 아이디는 이미 사용 중입니다. 다른 아이디를 입력해주세요.");
+				member.id.value="";
+			}
+				
+		}
+		
+		function pwdCheck() {
+			pwd1=member.pw.value;
+			pwd2=member.pw_check.value;
+			
+			if(pwd1===pwd2)
+				alert("비밀번호가 일치합니다.");
+			else
+			{
+				alert("비밀번호가 다릅니다. 다시 입력해주세요.");
+				member.pw.value="";
+				member.pw_check.value="";
+			}
+		}
+				
+	</script>
+	</head>
+	<body>
+		<center>
+		<div class="headline" onclick="location.href='main.html'">MOVIE LINE</div>
+		<iframe name="mid" src="identity.html" scrolling="no" width="60%" height="50px" frameborder="0"></iframe>
+		<div class="navbar">
+			<a class="navD" href="main.html">main</a>
+			<a class="navD" href="notice.html">Notice</a>
+			<a class="navD" href="community.html">Community</a>
+		</div><br>
+		
+		<div>
+			<h2>회원가입</h2><br><br>
+			<form action="member.jsp" method="POST" name="member">
+				<table>
+					<tr>
+						<td>아이디</td>
+						<td>
+							<input type="text" name="id" required>
+							<input type="button" value="중복검사" onclick="idCheck()">
+						</td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password" name="pw" required></td>
+					</tr>
+					<tr>
+						<td>비밀번호 확인</td>
+						<td>
+						<input type="password" name="pw_check" required>
+						<input type="button" value="비밀번호 일치확인" onclick="pwdCheck()">
+						</td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="name" required></td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="email" name="email"></td>
+					</tr>
+					<tr>
+						<td>어떤 장르의 영화를 선호하세요?</td>
+						<td>
+							<input type="checkbox" name="genre" value="romance">로맨스
+							<input type="checkbox" name="genre" value="comedy">코미디
+							<input type="checkbox" name="genre" value="action">액션
+							<input type="checkbox" name="genre" value="darama">드라마
+							<input type="checkbox" name="genre" value="sf">SF/판타지
+							<input type="checkbox" name="genre" value="thriller">스릴러
+							<input type="checkbox" name="genre" value="horror">공포
+						</td>
+					</tr>
+					<tr>
+				</table>
+				<br><br><br><input type="submit" value="확인">
+			</form>
+		</div><br><Br>
+		<hr/>
+		<footer>
+			&copy;20200954 김세정<br><br>
+		</footer>
+		</center>
+	</body>
+</html>
